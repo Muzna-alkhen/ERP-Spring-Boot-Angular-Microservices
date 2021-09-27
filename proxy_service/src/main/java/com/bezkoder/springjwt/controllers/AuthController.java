@@ -117,7 +117,61 @@ public class AuthController {
 					roles.add(modRole);
 
 					break;
-				default:
+
+					case "general_manager":
+						Role gen_manRole = roleRepository.findByName(ERole.ROLE_GEN_MAN)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(gen_manRole);
+
+						break;
+
+
+				case "hr_manager":
+						Role hr_manRole = roleRepository.findByName(ERole.ROLE_HR_MAN)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(hr_manRole);
+
+						break;
+
+					case "pm_manager":
+						Role pm_manRole = roleRepository.findByName(ERole.ROLE_PM_MAN)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(pm_manRole);
+
+						break;
+
+					case "fi_manager":
+						Role fi_manRole = roleRepository.findByName(ERole.ROLE_FI_MAN)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(fi_manRole);
+
+						break;
+
+					case "hr_emp":
+						Role hr_empRole = roleRepository.findByName(ERole.ROLE_HR_EMP)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(hr_empRole);
+
+						break;
+
+
+					case "pm_emp":
+						Role pm_empRole = roleRepository.findByName(ERole.ROLE_PM_EMP)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(pm_empRole);
+
+						break;
+
+
+
+					case "fi_emp":
+						Role fi_empRole = roleRepository.findByName(ERole.ROLE_FI_EMP)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(fi_empRole);
+
+						break;
+
+					default:
 					Role userRole = roleRepository.findByName(ERole.ROLE_USER)
 							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 					roles.add(userRole);

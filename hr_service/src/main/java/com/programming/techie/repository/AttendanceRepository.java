@@ -1,2 +1,7 @@
-package com.programming.techie.repository;public interface AttendanceRepository {
+package com.programming.techie.repository;
+
+import com.programming.techie.model.Attendance;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
 }

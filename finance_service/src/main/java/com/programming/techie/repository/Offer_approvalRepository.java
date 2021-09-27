@@ -1,4 +1,7 @@
 package com.programming.techie.repository;
 
-public interface Offer_approvalRepository {
+import com.programming.techie.model.Offer_approval;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Offer_approvalRepository extends JpaRepository<Offer_approval, Long> {
 }
