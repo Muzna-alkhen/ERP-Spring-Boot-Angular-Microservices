@@ -48,10 +48,6 @@ public class Employee {
     private String contact;
 
 
-
-
-
-
     @ManyToOne
     @JoinColumn(name="department")
     private Department department;

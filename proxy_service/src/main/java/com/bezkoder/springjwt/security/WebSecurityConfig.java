@@ -66,6 +66,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/hr_service/leaves/accept/*").permitAll()
 			.antMatchers("/hr_service/leaves/reject/*").permitAll()
 			.antMatchers("/hr_service/leaves/checkMax/*").permitAll()
+			.antMatchers("/hr_service/employees/create").permitAll()
+			.antMatchers("/hr_service/attendance/create").permitAll()
+			.antMatchers("/hr_service/job-offer/create").permitAll()
+			.antMatchers("/hr_service/job-offer/open/*").permitAll()
+			.antMatchers("/hr_service/job-offer/close/*").permitAll()
 
 			.anyRequest().authenticated();
 

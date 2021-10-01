@@ -20,9 +20,6 @@ public class Approval_status {
     @OneToMany(mappedBy="status")
     private List<Salary_approval> salary_approvalList;
 
-    @OneToMany(mappedBy="status")
-    private List<Offer_approval> offer_approvalList;
-
     public Long getId() {
         return id;
     }
@@ -47,11 +44,5 @@ public class Approval_status {
         this.salary_approvalList = salary_approvalList;
     }
 
-    public List<Offer_approval> getOffer_approvalList() {
-        return offer_approvalList;
-    }
 
-    public void setOffer_approvalList(List<Offer_approval> offer_approvalList) {
-        this.offer_approvalList = offer_approvalList;
-    }
 }

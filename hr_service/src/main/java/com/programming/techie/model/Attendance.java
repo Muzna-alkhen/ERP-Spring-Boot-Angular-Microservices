@@ -16,6 +16,10 @@ public class Attendance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @Column(name = "date")
+    Date date;
+
     @ManyToOne
     @JoinColumn(name="type" )
     private Attendance_type type;
@@ -46,5 +50,14 @@ public class Attendance {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
