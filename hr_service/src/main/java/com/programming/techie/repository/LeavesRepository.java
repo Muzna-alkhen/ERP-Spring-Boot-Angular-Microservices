@@ -10,4 +10,6 @@ import java.util.List;
 public interface LeavesRepository extends JpaRepository<Leaves, Long> {
 
 List<Leaves> findByEmployeeAndType(Employee employee , Leave_type type);
+
+    List<Leaves> findByEmployee(Employee employee);
 }

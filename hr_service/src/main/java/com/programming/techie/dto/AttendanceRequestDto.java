@@ -2,7 +2,7 @@ package com.programming.techie.dto;
 
 import java.util.Date;
 
-public class AttendanceDto {
+public class AttendanceRequestDto {
 
     private Long type;
     private Long employee;

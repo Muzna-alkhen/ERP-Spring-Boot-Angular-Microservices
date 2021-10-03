@@ -17,6 +17,10 @@ public class Grade {
     private String name;
 
 
+    @Column(name = "constant")
+    private int constant;
+
+
     @OneToMany(mappedBy="grade")
     private List<Employee> employeeList;
 
@@ -42,5 +46,13 @@ public class Grade {
 
     public void setEmployeeList(List<Employee> employeeList) {
         this.employeeList = employeeList;
+    }
+
+    public int getConstant() {
+        return constant;
+    }
+
+    public void setConstant(int constant) {
+        this.constant = constant;
     }
 }

@@ -1,21 +1,13 @@
 package com.programming.techie.dto;
 
-import com.programming.techie.model.Department;
-import com.programming.techie.model.Designation;
-import com.programming.techie.model.Grade;
-
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.util.Date;
 
-public class EmployeeDto {
+public class EmployeeFullResponseDto {
 
 
     private String user_name;
 
     private String firstName;
-
 
     private String middleName;
 
@@ -23,32 +15,23 @@ public class EmployeeDto {
 
     private Date dateOfBirth;
 
-
     private Boolean isActive;
-
 
     private String email;
 
-
     private Date joiningDate;
 
-
-      private Date exitDate;
-
+    private Date exitDate;
 
     private String address;
 
-
     private String contact;
 
+    private String department;
 
-    private Long department;
+    private String designation;
 
-    private Long designation;
-
-    private Long grade;
-
-
+    private String grade;
 
     public String getUser_name() {
         return user_name;
@@ -138,27 +121,27 @@ public class EmployeeDto {
         this.contact = contact;
     }
 
-    public Long getDepartment() {
+    public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(Long department) {
+    public void setDepartment(String department) {
         this.department = department;
     }
 
-    public Long getDesignation() {
+    public String getDesignation() {
         return designation;
     }
 
-    public void setDesignation(Long designation) {
+    public void setDesignation(String designation) {
         this.designation = designation;
     }
 
-    public Long getGrade() {
+    public String getGrade() {
         return grade;
     }
 
-    public void setGrade(Long grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 }

@@ -1,8 +1,7 @@
 package com.programming.techie.controller;
 
 
-import com.netflix.discovery.converters.Auto;
-import com.programming.techie.dto.Job_offerDto;
+import com.programming.techie.dto.Job_offerRequestDto;
 import com.programming.techie.service.Job_offerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +17,12 @@ public class Job_offerController {
 
 
     @PostMapping("/create")
-    public String create (@RequestBody Job_offerDto job_offerDto)
+    public String create (@RequestBody Job_offerRequestDto job_offerRequestDto)
 
 
     {
 
-        job_offerService.create(job_offerDto);
+        job_offerService.create(job_offerRequestDto);
 
         return "job offer created Successfully ! ";
     }

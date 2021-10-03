@@ -26,6 +26,9 @@ public class Leaves {
     @Column(name = "end_date")
     private Date end_date;
 
+    @Column(name = "approval")
+    private String approval;
+
 
     @ManyToOne
     @JoinColumn(name="type")
@@ -101,5 +104,13 @@ public class Leaves {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public String getApproval() {
+        return approval;
+    }
+
+    public void setApproval(String approval) {
+        this.approval = approval;
     }
 }

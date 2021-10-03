@@ -1,6 +1,6 @@
 package com.programming.techie.service;
 
-import com.programming.techie.dto.Job_offerDto;
+import com.programming.techie.dto.Job_offerRequestDto;
 import com.programming.techie.model.Job_offer;
 import com.programming.techie.model.Job_offer_status;
 import com.programming.techie.repository.Job_offerRepository;
@@ -23,13 +23,13 @@ public class Job_offerService {
 
 
 
-    public void create(Job_offerDto job_offerDto) {
+    public void create(Job_offerRequestDto job_offerRequestDto) {
         Job_offer job_offer = new Job_offer();
-        job_offer.setName(job_offerDto.getName());
-        job_offer.setDescription(job_offerDto.getDescription());
-        job_offer.setNumber(job_offerDto.getNumber());
-        job_offer.setQualifications(job_offerDto.getQualifications());
-        job_offer.setSubmit_date(job_offerDto.getSubmit_date());
+        job_offer.setName(job_offerRequestDto.getName());
+        job_offer.setDescription(job_offerRequestDto.getDescription());
+        job_offer.setNumber(job_offerRequestDto.getNumber());
+        job_offer.setQualifications(job_offerRequestDto.getQualifications());
+        job_offer.setSubmit_date(job_offerRequestDto.getSubmit_date());
 
         Optional<Job_offer_status> status = job_offer_statusRepository.findById((long)1);
         job_offer.setStatus(status.get());

@@ -1,7 +1,7 @@
 package com.programming.techie.service;
 
 
-import com.programming.techie.dto.LeaveDto;
+import com.programming.techie.dto.LeaveRequestDto;
 import com.programming.techie.model.Employee;
 import com.programming.techie.model.Leave_status;
 import com.programming.techie.model.Leave_type;
@@ -13,7 +13,6 @@ import com.programming.techie.repository.LeavesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -33,27 +32,60 @@ public class LeaveService {
     @Autowired
     Leave_typeRepository leave_typeRepository;
 
+    @Autowired
+   EmployeeService employeeService;
 
 
-    public Leaves save (LeaveDto leaveDto)
+
+    public  String save (LeaveRequestDto leaveRequestDto)
     {
        Leaves leave = new Leaves();
-       Optional<Employee> employee = employeeRepository.findById(leaveDto.getEmployee());
+       Optional<Employee> employee = employeeRepository.findById(leaveRequestDto.getEmployee());
        leave.setEmployee(employee.get());
 
 
-       Optional<Leave_type> type = leave_typeRepository.findById(leaveDto.getType());
+       Optional<Leave_type> type = leave_typeRepository.findById(leaveRequestDto.getType());
        leave.setType(type.get());
 
       Optional<Leave_status> status = leave_statusRepository.findById((long) 2);
        leave.setStatus(status.get());
        
-       leave.setStart_date(leaveDto.getStart_date());
-       leave.setEnd_date(leaveDto.getEnd_date());
-       leave.setSubmit_date(leaveDto.getSubmit_date());
+       leave.setStart_date(leaveRequestDto.getStart_date());
+       leave.setEnd_date(leaveRequestDto.getEnd_date());
+       leave.setSubmit_date(leaveRequestDto.getSubmit_date());
 
     leavesRepository.save(leave);
-    return leave;
+
+
+    boolean check = checkMax(leave.getId());
+    if(!check)
+    {
+        leavesRepository.delete(leave);
+        return "you can't submit a leave! u have exceed the max of leaves this month";
+
+    }
+    else
+    {
+        boolean is_manager = employeeService.checkManager(leave.getEmployee().getId());
+        if (is_manager)
+        {
+            leave.setApproval("general_manager");
+            leavesRepository.save(leave);
+        }
+        else
+        {
+            leave.setApproval("hr_manager");
+            leavesRepository.save(leave);
+        }
+
+
+
+        return "leave has been submitted successfully ! ";
+
+    }
+
+
+
 
     }
 
@@ -69,6 +101,7 @@ public class LeaveService {
          _leave.setStatus(status.get());
          _leave.setApproval_date( new Date(millis));
          leavesRepository.save(_leave);
+
 
          }
 
@@ -107,7 +140,8 @@ public class LeaveService {
 
         int count = leaves.size();
 
-        if (count > max  || count == max)
+        System.out.println("MAX  "+max+"   count  "+count  );
+        if ((count -1) > max  || (count -1 ) == max)
         {
             return false;
         }
@@ -118,4 +152,13 @@ public class LeaveService {
 
     }
 
+
+    public void setApproval(String name, Long id)
+    {
+
+        Optional<Leaves> leave = leavesRepository.findById(id);
+        Leaves _leave = leave.get();
+        _leave.setApproval(name);
+        leavesRepository.save(_leave);
+    }
 }

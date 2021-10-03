@@ -1,6 +1,6 @@
 package com.programming.techie.service;
 
-import com.programming.techie.dto.AttendanceDto;
+import com.programming.techie.dto.AttendanceRequestDto;
 import com.programming.techie.model.Attendance;
 import com.programming.techie.model.Attendance_type;
 import com.programming.techie.model.Employee;
@@ -26,18 +26,23 @@ public class AttendanceService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    public void create(AttendanceDto attendanceDto)
+    public void create(AttendanceRequestDto attendanceRequestDto)
     {
         Attendance attendance = new Attendance();
 
-        Optional<Attendance_type> type = attendance_typeRepository.findById(attendanceDto.getType()) ;
+        Optional<Attendance_type> type = attendance_typeRepository.findById(attendanceRequestDto.getType()) ;
         attendance.setType(type.get());
 
-        Optional<Employee> employee = employeeRepository.findById(attendanceDto.getEmployee());
+        Optional<Employee> employee = employeeRepository.findById(attendanceRequestDto.getEmployee());
         attendance.setEmployee(employee.get());
 
-        attendance.setDate(attendanceDto.getDate());
+        attendance.setDate(attendanceRequestDto.getDate());
+
 
         attendanceRepository.save(attendance);
+
+
+
+
     }
 }

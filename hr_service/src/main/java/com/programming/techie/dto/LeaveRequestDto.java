@@ -2,7 +2,7 @@ package com.programming.techie.dto;
 
 import java.util.Date;
 
-public class LeaveDto {
+public class LeaveRequestDto {
 
 
     Date submit_date;

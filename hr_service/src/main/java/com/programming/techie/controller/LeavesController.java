@@ -1,11 +1,10 @@
 package com.programming.techie.controller;
 
 
-import com.programming.techie.dto.LeaveDto;
-import com.programming.techie.model.Leaves;
+import com.programming.techie.WorkflowEngineCamunda;
+import com.programming.techie.dto.LeaveRequestDto;
 import com.programming.techie.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -18,13 +17,14 @@ public class LeavesController {
     LeaveService leaveService;
 
 
+    @WorkflowEngineCamunda (key = "Leave Request")
     @PostMapping("/submit")
-    public String submit(@RequestBody LeaveDto leaveDto) {
+    public String submit(@RequestBody LeaveRequestDto leaveRequestDto) {
 
 
 
-        leaveService.save(leaveDto);
-         return "Leave has been submitted !";
+        return  leaveService.save(leaveRequestDto);
+
 
     }
 
@@ -52,5 +52,14 @@ public class LeavesController {
         return leaveService.checkMax(id);
 
     }
+
+    @PostMapping("/setApproval")
+    public void setApproval(@RequestBody String name , @RequestBody Long id)
+    {
+
+         leaveService.setApproval(name , id);
+
+    }
+
 
 }

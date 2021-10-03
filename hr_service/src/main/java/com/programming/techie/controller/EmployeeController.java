@@ -1,11 +1,14 @@
 package com.programming.techie.controller;
 
 
-import com.programming.techie.dto.EmployeeDto;
-import com.programming.techie.repository.EmployeeRepository;
+import com.programming.techie.dto.EmployeeFullResponseDto;
+import com.programming.techie.dto.EmployeeRequestDto;
+import com.programming.techie.dto.EmployeeResponseDto;
 import com.programming.techie.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -18,12 +21,29 @@ public class EmployeeController {
 
 
 
+    @GetMapping("/{id}")
+    public EmployeeFullResponseDto get(@PathVariable Long id)
+    {
+        return employeeService.get(id);
+
+    }
+
+
+    @GetMapping("/all")
+    public List<EmployeeResponseDto> getAll()
+    {
+
+    return employeeService.getAll();
+
+    }
+
+
     @PostMapping ("/create")
 
-    public  String create(@RequestBody  EmployeeDto employeeDto)
+    public  String create(@RequestBody EmployeeRequestDto employeeRequestDto)
 
     {
-        employeeService.create(employeeDto);
+        employeeService.create(employeeRequestDto);
         return "Employee created successfully !";
 
 

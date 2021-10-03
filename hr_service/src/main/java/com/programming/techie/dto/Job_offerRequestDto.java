@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import java.util.Date;
 import java.util.List;
 
-public class Job_offerDto
+public class Job_offerRequestDto
 
 {
 
