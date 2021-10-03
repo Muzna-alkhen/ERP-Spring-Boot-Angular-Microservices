@@ -6,9 +6,9 @@ public enum ERole {
     ROLE_ADMIN ,
     ROLE_GEN_MAN,
     ROLE_HR_MAN,
-    ROLE_PM_MAN ,
+
     ROLE_FI_MAN,
     ROLE_HR_EMP ,
-    ROLE_PM_EMP,
+
     ROLE_FI_EMP
 }

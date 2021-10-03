@@ -71,7 +71,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/hr_service/job-offer/create").permitAll()
 			.antMatchers("/hr_service/job-offer/open/*").permitAll()
 			.antMatchers("/hr_service/job-offer/close/*").permitAll()
-
+			.antMatchers("/hr_service/employees/all").permitAll()
+			.antMatchers("/hr_service/employees/*").permitAll()
+			.antMatchers("/hr_service/month-salary/generate").permitAll()
+			.antMatchers("/finance_service/payroll/request").permitAll()
 			.anyRequest().authenticated();
 
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

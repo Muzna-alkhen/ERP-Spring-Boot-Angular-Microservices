@@ -133,12 +133,7 @@ public class AuthController {
 
 						break;
 
-					case "pm_manager":
-						Role pm_manRole = roleRepository.findByName(ERole.ROLE_PM_MAN)
-								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-						roles.add(pm_manRole);
 
-						break;
 
 					case "fi_manager":
 						Role fi_manRole = roleRepository.findByName(ERole.ROLE_FI_MAN)
@@ -155,12 +150,6 @@ public class AuthController {
 						break;
 
 
-					case "pm_emp":
-						Role pm_empRole = roleRepository.findByName(ERole.ROLE_PM_EMP)
-								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-						roles.add(pm_empRole);
-
-						break;
 
 
 
