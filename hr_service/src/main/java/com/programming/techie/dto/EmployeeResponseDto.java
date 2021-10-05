@@ -5,7 +5,7 @@ import java.util.Date;
 public class EmployeeResponseDto {
 
 
-
+  private  Long id;
     private String firstName;
 
     private String lastName;
@@ -86,5 +86,13 @@ public class EmployeeResponseDto {
 
     public void setGrade(String grade) {
         this.grade = grade;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

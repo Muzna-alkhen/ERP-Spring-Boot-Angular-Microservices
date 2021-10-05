@@ -2,9 +2,12 @@ package com.programming.techie.controller;
 
 
 import com.programming.techie.dto.Job_offerRequestDto;
+import com.programming.techie.dto.Job_offerResponseDto;
 import com.programming.techie.service.Job_offerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -41,6 +44,12 @@ public class Job_offerController {
     {
         job_offerService.close(id);
         return "job has been closed it successfully ! ";
+
+    }
+
+    @GetMapping("/all")
+    public List<Job_offerResponseDto> all() {
+        return job_offerService.all();
 
     }
 

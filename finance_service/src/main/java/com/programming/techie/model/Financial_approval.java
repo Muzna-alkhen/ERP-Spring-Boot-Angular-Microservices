@@ -5,8 +5,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "salary_approval")
-public class Salary_approval {
+@Table(name = "financial_approval")
+public class Financial_approval {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,9 +31,6 @@ public class Salary_approval {
     private Approval_status status;
 
 
-    @ManyToOne
-    @JoinColumn(name="transaction")
-    private Transaction_out transaction;
 
     public Long getId() {
         return id;
@@ -83,11 +80,4 @@ public class Salary_approval {
         this.status = status;
     }
 
-    public Transaction_out getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction_out transaction) {
-        this.transaction = transaction;
-    }
 }

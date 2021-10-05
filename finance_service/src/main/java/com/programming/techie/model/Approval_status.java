@@ -2,7 +2,6 @@ package com.programming.techie.model;
 
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,7 +17,7 @@ public class Approval_status {
 
 
     @OneToMany(mappedBy="status")
-    private List<Salary_approval> salary_approvalList;
+    private List<Financial_approval> salary_approvalList;
 
     public Long getId() {
         return id;
@@ -36,11 +35,11 @@ public class Approval_status {
         this.name = name;
     }
 
-    public List<Salary_approval> getSalary_approvalList() {
+    public List<Financial_approval> getSalary_approvalList() {
         return salary_approvalList;
     }
 
-    public void setSalary_approvalList(List<Salary_approval> salary_approvalList) {
+    public void setSalary_approvalList(List<Financial_approval> salary_approvalList) {
         this.salary_approvalList = salary_approvalList;
     }
 

@@ -38,6 +38,11 @@ public class Customer {
     private String contact;
 
 
+
+    @OneToMany(mappedBy="customer")
+    private List<Sales_Invoice> sales_invoiceList;
+
+
     public Long getId() {
         return id;
     }

@@ -1,6 +1,9 @@
 package com.programming.techie.service;
 
+import com.programming.techie.dto.Job_applicantResponseDto;
 import com.programming.techie.dto.Job_offerRequestDto;
+import com.programming.techie.dto.Job_offerResponseDto;
+import com.programming.techie.model.Job_applicant;
 import com.programming.techie.model.Job_offer;
 import com.programming.techie.model.Job_offer_status;
 import com.programming.techie.repository.Job_offerRepository;
@@ -8,6 +11,8 @@ import com.programming.techie.repository.Job_offer_statusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -63,5 +68,25 @@ public class Job_offerService {
         _job_offer.setStatus(status.get());
 
         job_offerRepository.save(_job_offer);
+    }
+
+    public List<Job_offerResponseDto> all() {
+
+
+        List<Job_offer> job_offerList = job_offerRepository.findAll();
+        List<Job_offerResponseDto> list = new ArrayList();
+        for (Job_offer job_offer :
+                job_offerList) {
+            Job_offerResponseDto dto = new Job_offerResponseDto();
+
+            dto.setId(job_offer.getId());
+            dto.setName(job_offer.getName());
+            dto.setNumber(job_offer.getNumber());
+            dto.setSubmit_date(job_offer.getSubmit_date());
+
+            list.add(dto);
+        }
+        return list;
+
     }
 }

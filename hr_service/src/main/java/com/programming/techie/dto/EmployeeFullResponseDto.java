@@ -1,9 +1,15 @@
 package com.programming.techie.dto;
 
+import com.programming.techie.model.Leaves;
+import com.programming.techie.model.Month_salary;
+
 import java.util.Date;
+import java.util.List;
 
 public class EmployeeFullResponseDto {
 
+
+    private Long id;
 
     private String user_name;
 
@@ -32,6 +38,25 @@ public class EmployeeFullResponseDto {
     private String designation;
 
     private String grade;
+
+    private List<Month_salaryDto> month_salaryList;
+    private List<LeavesResponseDto> leavesList;
+
+    public List<Month_salaryDto> getMonth_salaryList() {
+        return month_salaryList;
+    }
+
+    public void setMonth_salaryList(List<Month_salaryDto> month_salaryList) {
+        this.month_salaryList = month_salaryList;
+    }
+
+    public List<LeavesResponseDto> getLeavesList() {
+        return leavesList;
+    }
+
+    public void setLeavesList(List<LeavesResponseDto> leavesList) {
+        this.leavesList = leavesList;
+    }
 
     public String getUser_name() {
         return user_name;
@@ -143,5 +168,13 @@ public class EmployeeFullResponseDto {
 
     public void setGrade(String grade) {
         this.grade = grade;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

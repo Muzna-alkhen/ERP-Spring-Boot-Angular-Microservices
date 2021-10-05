@@ -3,7 +3,9 @@ package com.programming.techie.dto;
 
 
 
-public class PayrollDto {
+public class PayrollRequestDto {
+
+
     private String month;
     private String year;
 

@@ -21,10 +21,10 @@ public class EmployeeController {
 
 
 
-    @GetMapping("/{id}")
-    public EmployeeFullResponseDto get(@PathVariable Long id)
+    @GetMapping("get/{username}")
+    public EmployeeFullResponseDto get(@PathVariable String username)
     {
-        return employeeService.get(id);
+        return employeeService.get(username);
 
     }
 

@@ -4,10 +4,7 @@ package com.programming.techie.service;
 import com.programming.techie.dto.EmployeeFullResponseDto;
 import com.programming.techie.dto.EmployeeRequestDto;
 import com.programming.techie.dto.EmployeeResponseDto;
-import com.programming.techie.model.Department;
-import com.programming.techie.model.Designation;
-import com.programming.techie.model.Employee;
-import com.programming.techie.model.Grade;
+import com.programming.techie.model.*;
 import com.programming.techie.repository.DepartmentRepository;
 import com.programming.techie.repository.DesignationRepository;
 import com.programming.techie.repository.EmployeeRepository;
@@ -108,7 +105,7 @@ public class EmployeeService {
             dto.setContact(employee.getContact());
             dto.setFirstName(employee.getFirstName());
             dto.setLastName(employee.getLastName());
-
+            dto.setId(employee.getId());
             Department department =employee.getDepartment();
             dto.setDepartment(department.getName());
 
@@ -125,30 +122,34 @@ public class EmployeeService {
 
     }
 
-    public EmployeeFullResponseDto get(Long id) {
+    public EmployeeFullResponseDto get(String username) {
 
-        Optional<Employee> employee = employeeRepository.findById(id);
+        Employee employee = employeeRepository.findByUser_name(username);
         EmployeeFullResponseDto dto = new EmployeeFullResponseDto();
-        dto.setUser_name(employee.get().getUser_name());
-        dto.setLastName(employee.get().getLastName());
-        dto.setFirstName(employee.get().getFirstName());
-        dto.setMiddleName(employee.get().getMiddleName());
-        dto.setAddress(employee.get().getAddress());
-        dto.setActive(employee.get().getActive());
-        dto.setContact(employee.get().getContact());
-        dto.setDateOfBirth(employee.get().getDateOfBirth());
-        dto.setEmail(employee.get().getEmail());
-        dto.setExitDate(employee.get().getExitDate());
-        dto.setJoiningDate(employee.get().getJoiningDate());
+        dto.setUser_name(employee.getUser_name());
+        dto.setLastName(employee.getLastName());
+        dto.setFirstName(employee.getFirstName());
+        dto.setMiddleName(employee.getMiddleName());
+        dto.setAddress(employee.getAddress());
+        dto.setActive(employee.getActive());
+        dto.setContact(employee.getContact());
+        dto.setDateOfBirth(employee.getDateOfBirth());
+        dto.setEmail(employee.getEmail());
+        dto.setExitDate(employee.getExitDate());
+        dto.setJoiningDate(employee.getJoiningDate());
+        dto.setId(employee.getId());
 
-        Department department =(employee.get()).getDepartment();
+        Department department =employee.getDepartment();
         dto.setDepartment(department.getName());
 
-        Designation designation = (employee.get()).getDesignation();
+        Designation designation = employee.getDesignation();
         dto.setDesignation(designation.getName());
 
-        Grade grade = (employee.get()).getGrade();
+        Grade grade = employee.getGrade();
         dto.setGrade(grade.getName());
+
+        List<Leaves> leavesList = employee.getLeavesList();
+
 
 
         return dto;

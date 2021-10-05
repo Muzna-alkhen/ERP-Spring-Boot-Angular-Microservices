@@ -5,7 +5,116 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b21c5be-f010-448e-9409-0a668c6baca4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/Approval_StatusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/Financial_approvalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/Journal_EntryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/Purchase_InvoiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/Sales_InvoiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/SupplierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/Approval_StatusDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/CustomerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/CustomerResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/Financial_approvalResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/ItemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/Journal_EntryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/PayrollResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/Purchase_InvoiceResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/Sales_InvoiceResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/SupplierResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/mq/AllPayrollMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Financial_approvalRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/Approval_StatusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/Financial_approvalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/ItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/Journal_EntryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/Purchase_InvoiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/Sales_InvoiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/SupplierService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Attendance_typeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/DepartmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/DesignationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/GradeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Job_applicantController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Job_applicant_statusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Job_offer_statusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Leave_statusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Leave_typeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/AttendanceResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/Attendance_typeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/DepartmentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/DesignationDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/GradeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/Job_applicantResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/Job_applicant_statusDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/Job_offerResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/Job_offer_statusDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/Leave_statusDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/Leave_typeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/LeavesResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/Month_salaryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/repository/Job_applicant_statusRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Attendance_typeControllerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/DepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/DesignationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/GradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Job_applicantService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Job_applicant_statusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Job_offer_statusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Leave_statusService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Leave_typeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../proxy_service/src/main/java/com/bezkoder/springjwt/dto/RoleResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../proxy_service/src/main/java/com/bezkoder/springjwt/dto/UserResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/PayrollController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/controller/PayrollController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/PayrollDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/dto/PayrollRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Approval_status.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Approval_status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Item_per_purchase_invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Item_per_purchase_invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Item_per_sales_invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Item_per_sales_invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Journal_Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Journal_Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Payroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Payroll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Purchase_Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Purchase_Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Salary_approval.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Financial_approval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Sales_Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Sales_Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/model/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/mq/JmsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/mq/JmsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/mq/MessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/mq/MessageConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/mq/PayrollMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/mq/PayrollMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Item_per_purchase_invoiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Item_per_purchase_invoiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Journal_EntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Journal_EntryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Purchase_InvoiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Purchase_InvoiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Salary_approvalRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Sales_InvoiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/Sales_InvoiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/SupplierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/repository/SupplierRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/PayrollService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../finance_service/src/main/java/com/programming/techie/service/PayrollService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gs-messaging-stomp-websocket" beforeDir="false" afterPath="$PROJECT_DIR$/../gs-messaging-stomp-websocket" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/AttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Job_offerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Job_offerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/LeavesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/LeavesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Month_salaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/controller/Month_salaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/EmployeeFullResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/EmployeeFullResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/EmployeeResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/dto/EmployeeResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/mq/AllPayrollMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/mq/AllPayrollMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/mq/JmsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/mq/JmsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/mq/MessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/mq/MessageConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/AttendanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Job_offerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Job_offerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/LeaveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/LeaveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Month_salaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hr_service/src/main/java/com/programming/techie/service/Month_salaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proxy_service/src/main/java/com/bezkoder/springjwt/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proxy_service/src/main/java/com/bezkoder/springjwt/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proxy_service/src/main/java/com/bezkoder/springjwt/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proxy_service/src/main/java/com/bezkoder/springjwt/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proxy_service/src/main/java/com/bezkoder/springjwt/security/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../proxy_service/src/main/java/com/bezkoder/springjwt/security/jwt/JwtUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +122,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -23,6 +132,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1yPZ2l32sxF53mDlWjx2Cp4gul2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -66,21 +176,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1632303154019" />
-    <state width="1323" height="337" key="GridCell.Tab.0.bottom" timestamp="1633117083916">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom" timestamp="1633463190357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1633117083916" />
-    <state width="1323" height="337" key="GridCell.Tab.0.center" timestamp="1633117083916">
+    <state width="1323" height="99" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1633463190357" />
+    <state width="1323" height="99" key="GridCell.Tab.0.center" timestamp="1633463190357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1633117083916" />
-    <state width="1323" height="337" key="GridCell.Tab.0.left" timestamp="1633117083915">
+    <state width="1323" height="99" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1633463190357" />
+    <state width="1323" height="99" key="GridCell.Tab.0.left" timestamp="1633463190357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1633117083915" />
-    <state width="1323" height="337" key="GridCell.Tab.0.right" timestamp="1633117083916">
+    <state width="1323" height="99" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1633463190357" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right" timestamp="1633463190357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="337" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1633117083916" />
+    <state width="1323" height="99" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1633463190357" />
   </component>
 </project>

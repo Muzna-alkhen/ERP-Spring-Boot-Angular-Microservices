@@ -1,12 +1,17 @@
 package com.bezkoder.springjwt.controllers;
 
+import com.bezkoder.springjwt.dto.PermissionDto;
+import com.bezkoder.springjwt.dto.RoleResponseDto;
+import com.bezkoder.springjwt.dto.UserResponseDto;
 import com.bezkoder.springjwt.models.ERole;
+import com.bezkoder.springjwt.models.Permission;
 import com.bezkoder.springjwt.models.Role;
 import com.bezkoder.springjwt.models.User;
 import com.bezkoder.springjwt.payload.request.LoginRequest;
 import com.bezkoder.springjwt.payload.request.SignupRequest;
 import com.bezkoder.springjwt.payload.response.JwtResponse;
 import com.bezkoder.springjwt.payload.response.MessageResponse;
+import com.bezkoder.springjwt.repository.PermissionRepository;
 import com.bezkoder.springjwt.repository.RoleRepository;
 import com.bezkoder.springjwt.repository.UserRepository;
 import com.bezkoder.springjwt.security.jwt.JwtUtils;
@@ -17,13 +22,12 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -44,6 +48,9 @@ public class AuthController {
 
 	@Autowired
 	JwtUtils jwtUtils;
+
+	@Autowired
+	PermissionRepository permissionRepository;
 
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -173,4 +180,117 @@ public class AuthController {
 
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	}
+
+	@GetMapping("/user-by-token")
+
+	public UserResponseDto getUser(@RequestHeader (name="Authorization") String token)
+
+	{
+
+
+		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication()
+				.getPrincipal();
+
+		String username = userDetails.getUsername();
+
+		Optional<User> user =userRepository.findByUsername(username);
+
+		UserResponseDto dto = new UserResponseDto();
+		dto.setId(user.get().getId());
+		dto.setEmail(user.get().getEmail());
+		dto.setUsername(user.get().getUsername());
+
+		Set<Role> roles = user.get().getRoles();
+		List<RoleResponseDto> roles_dto = new ArrayList();
+
+		for (Role role :
+			 roles) {
+
+		RoleResponseDto role_dto = new RoleResponseDto();
+		role_dto.setId(role.getId());
+		role_dto.setName(role.getName().name());
+		roles_dto.add(role_dto);
+
+		}
+        dto.setRoles(roles_dto);
+
+     return dto;
+	}
+	@GetMapping("/roles")
+
+	public List<RoleResponseDto> getRoles()
+
+	{
+		List<Role> roles = roleRepository.findAll();
+		List<RoleResponseDto> list = new ArrayList();
+
+		for (Role role: roles)
+			  {
+			RoleResponseDto dto = new RoleResponseDto();
+			dto.setId(role.getId());
+			dto.setName(role.getName().name());
+			list.add(dto);
+		}
+
+		return list;
+	}
+
+
+
+
+	@GetMapping("/users")
+
+	public List<UserResponseDto> getUsers()
+
+	{
+		List<User> users = userRepository.findAll();
+		List<UserResponseDto> list = new ArrayList();
+
+		for (User user: users)
+		{
+			UserResponseDto dto = new UserResponseDto();
+			dto.setId(user.getId());
+			dto.setUsername(user.getUsername());
+			dto.setEmail(user.getEmail());
+		    Set<Role> _roles =  user.getRoles();
+		    List<Role> roles = new ArrayList();
+		    roles.addAll(_roles);
+		    List<RoleResponseDto> roles_dto = new ArrayList();
+			for (Role role :
+					roles) {
+
+				RoleResponseDto role_dto = new RoleResponseDto();
+				role_dto.setId(role.getId());
+				role_dto.setName(role.getName().name());
+				roles_dto.add(role_dto);
+			}
+		    dto.setRoles(roles_dto);
+			list.add(dto);
+		}
+
+		return list;
+	}
+
+
+	@GetMapping("/permissions")
+	List<PermissionDto> get()
+	{
+		List<Permission> permissions = permissionRepository.findAll();
+		List<PermissionDto>  list = new ArrayList();
+
+
+		for (Permission permission: permissions)
+		{
+			PermissionDto dto = new PermissionDto();
+			dto.setId(permission.getId());
+			dto.setName(permission.getName());
+			dto.setUrl(permission.getUrl());
+			list.add(dto);
+		}
+
+
+
+		return list;
+	}
+
 }

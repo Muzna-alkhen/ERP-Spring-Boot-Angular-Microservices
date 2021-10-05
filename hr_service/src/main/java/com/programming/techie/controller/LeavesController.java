@@ -3,9 +3,12 @@ package com.programming.techie.controller;
 
 import com.programming.techie.WorkflowEngineCamunda;
 import com.programming.techie.dto.LeaveRequestDto;
+import com.programming.techie.dto.LeavesResponseDto;
 import com.programming.techie.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -61,5 +64,9 @@ public class LeavesController {
 
     }
 
+    @GetMapping("/all")
+    public List<LeavesResponseDto> all() {
+        return leaveService.all();
 
+    }
 }
