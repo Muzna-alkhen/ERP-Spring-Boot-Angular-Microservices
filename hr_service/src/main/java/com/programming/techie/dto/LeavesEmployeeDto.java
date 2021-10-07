@@ -2,14 +2,12 @@ package com.programming.techie.dto;
 
 import java.util.Date;
 
-public class LeavesResponseDto {
-
+public class LeavesEmployeeDto {
 
     private Long id;
     private Date submit_date;
     private Date start_date;
     private Date end_date;
-    private String employee_name;
     private String approval;
     private String type ;
 
@@ -45,12 +43,12 @@ public class LeavesResponseDto {
         this.end_date = end_date;
     }
 
-    public String getEmployee_name() {
-        return employee_name;
+    public String getApproval() {
+        return approval;
     }
 
-    public void setEmployee_name(String employee_name) {
-        this.employee_name = employee_name;
+    public void setApproval(String approval) {
+        this.approval = approval;
     }
 
     public String getType() {
@@ -59,13 +57,5 @@ public class LeavesResponseDto {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String getApproval() {
-        return approval;
-    }
-
-    public void setApproval(String approval) {
-        this.approval = approval;
     }
 }

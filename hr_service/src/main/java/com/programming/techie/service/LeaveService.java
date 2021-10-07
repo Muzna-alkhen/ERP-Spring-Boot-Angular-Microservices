@@ -39,8 +39,8 @@ public class LeaveService {
 
     public String save(LeaveRequestDto leaveRequestDto) {
         Leaves leave = new Leaves();
-        Optional<Employee> employee = employeeRepository.findById(leaveRequestDto.getEmployee());
-        leave.setEmployee(employee.get());
+        Employee employee = employeeRepository.findByUserName(leaveRequestDto.getUsername());
+        leave.setEmployee(employee);
 
 
         Optional<Leave_type> type = leave_typeRepository.findById(leaveRequestDto.getType());
@@ -158,6 +158,7 @@ public class LeaveService {
             dto.setStart_date(leaves.getStart_date());
             dto.setSubmit_date(leaves.getSubmit_date());
             dto.setType(leaves.getType().getName());
+            dto.setApproval(leaves.getApproval());
 
             list.add(dto);
         }

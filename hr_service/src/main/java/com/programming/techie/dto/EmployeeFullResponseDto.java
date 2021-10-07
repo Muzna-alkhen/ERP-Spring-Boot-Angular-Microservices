@@ -40,7 +40,7 @@ public class EmployeeFullResponseDto {
     private String grade;
 
     private List<Month_salaryDto> month_salaryList;
-    private List<LeavesResponseDto> leavesList;
+    private List<LeavesEmployeeDto> leavesList;
 
     public List<Month_salaryDto> getMonth_salaryList() {
         return month_salaryList;
@@ -50,11 +50,11 @@ public class EmployeeFullResponseDto {
         this.month_salaryList = month_salaryList;
     }
 
-    public List<LeavesResponseDto> getLeavesList() {
+    public List<LeavesEmployeeDto> getLeavesList() {
         return leavesList;
     }
 
-    public void setLeavesList(List<LeavesResponseDto> leavesList) {
+    public void setLeavesList(List<LeavesEmployeeDto> leavesList) {
         this.leavesList = leavesList;
     }
 

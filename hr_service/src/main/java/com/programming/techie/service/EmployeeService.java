@@ -147,11 +147,11 @@ public class EmployeeService {
         dto.setGrade(grade.getName());
 
         List<Leaves> leavesList = employee.getLeavesList();
-        List<LeavesResponseDto> list = new ArrayList();
+        List<LeavesEmployeeDto> list = new ArrayList();
         for (Leaves leaves :
                 leavesList) {
-            LeavesResponseDto _dto = new LeavesResponseDto();
-            _dto.setEmployee_name(leaves.getApproval());
+            LeavesEmployeeDto _dto = new LeavesEmployeeDto();
+            _dto.setApproval(leaves.getApproval());
             _dto.setEnd_date(leaves.getEnd_date());
             _dto.setId(leaves.getId());
             _dto.setStart_date(leaves.getStart_date());

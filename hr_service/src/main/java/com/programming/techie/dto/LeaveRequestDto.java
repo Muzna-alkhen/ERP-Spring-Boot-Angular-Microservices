@@ -8,7 +8,7 @@ public class LeaveRequestDto {
     Date submit_date;
     Date start_date;
     Date end_date;
-    Long employee;
+    String username;
     Long type ;
 
     public Date getSubmit_date() {
@@ -35,12 +35,12 @@ public class LeaveRequestDto {
         this.end_date = end_date;
     }
 
-    public Long getEmployee() {
-        return employee;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmployee(Long employee) {
-        this.employee = employee;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Long getType() {
