@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.jms.Queue;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/hello")
 public class TestController {
 

@@ -15,7 +15,7 @@ public class Employee {
     private Long id;
 
     @Column(name = "user_name", length = 100)
-    private String user_name;
+    private String userName;
 
     @Column(name = "first_name", length = 100)
     private String firstName;
@@ -75,11 +75,11 @@ public class Employee {
     }
 
     public String getUser_name() {
-        return user_name;
+        return userName;
     }
 
     public void setUser_name(String user_name) {
-        this.user_name = user_name;
+        this.userName = user_name;
     }
 
     public String getFirstName() {

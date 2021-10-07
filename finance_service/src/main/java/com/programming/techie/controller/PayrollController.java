@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/payroll")
 public class PayrollController {
 
@@ -22,7 +21,7 @@ public class PayrollController {
     public String request (@RequestBody PayrollRequestDto payrollDto)
     {
         payrollService.request(payrollDto);
-        return "sent";
+        return "Request has been send to HR department!";
 
 
     }

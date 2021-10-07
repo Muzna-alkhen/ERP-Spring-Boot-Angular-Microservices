@@ -16,6 +16,9 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
@@ -25,7 +28,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 		prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
-    UserDetailsServiceImpl userDetailsService;
+	UserDetailsServiceImpl userDetailsService;
 
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
@@ -55,27 +58,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.cors().and().csrf().disable()
-			.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-			.authorizeRequests().antMatchers("/api/auth/**").permitAll()
-			.antMatchers("/api/test/**").permitAll()
-			.antMatchers("/email_service/*").permitAll()
-	//		.antMatchers("/hr_service/*/all").hasAnyRole("ADMIN","HR_MAN","HR_EMP")
-            .antMatchers("/hr_service/*/all").permitAll()
+				.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+				.authorizeRequests().antMatchers("/api/auth/**").permitAll()
+				.antMatchers("/api/test/**").permitAll()
+				.antMatchers("/email_service/*").permitAll()
+				//		.antMatchers("/hr_service/*/all").hasAnyRole("ADMIN","HR_MAN","HR_EMP")
+				.antMatchers("/hr_service/*/all").permitAll()
 
-			.antMatchers("/hr_service/employees/get/*").permitAll()
-			.antMatchers("/hr_service/employees/create").permitAll()
-			.antMatchers("/hr_service/job-offer/create").permitAll()
-			.antMatchers("/hr_service/job-offer/open/*").permitAll()
-			.antMatchers("/hr_service/job-offer/close/*").permitAll()
-			.antMatchers("/hr_service/leaves/submit").permitAll()
-			.antMatchers("/hr_service/leaves/submit").permitAll()
-			.antMatchers("/hr_service/leaves/accept/*").permitAll()
-			.antMatchers("/hr_service/leaves/reject/*").permitAll()
-			.antMatchers("/hr_service/month-salary").permitAll()
+				.antMatchers("/hr_service/employees/get/*").permitAll()
+				.antMatchers("/hr_service/employees/create").permitAll()
+				.antMatchers("/hr_service/job-offer/create").permitAll()
+				.antMatchers("/hr_service/job-offer/open/*").permitAll()
+				.antMatchers("/hr_service/job-offer/close/*").permitAll()
+				.antMatchers("/hr_service/leaves/submit").permitAll()
+				.antMatchers("/hr_service/leaves/submit").permitAll()
+				.antMatchers("/hr_service/leaves/get/*").permitAll()
+				.antMatchers("/hr_service/leaves/accept/*").permitAll()
+				.antMatchers("/hr_service/leaves/reject/*").permitAll()
+				.antMatchers("/hr_service/month-salary").permitAll()
 
 //			.antMatchers("/finance_service/*/all").hasAnyRole("ADMIN","FI_MAN","HR_EMP")
-			.antMatchers("/finance_service/*/all").permitAll()
+				.antMatchers("/finance_service/*/all").permitAll()
 
 				.antMatchers("/finance_service/payroll/request").permitAll()
 
@@ -84,4 +88,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
+
+
+
+
+
 }

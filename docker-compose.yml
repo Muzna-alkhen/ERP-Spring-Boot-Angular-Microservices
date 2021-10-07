@@ -1,47 +1,60 @@
-
-version: '3'
+version: "3.7"
 services:
-  discovery:
-    image: zakariaelattar/register_microservice:latest
+  register:
+    image: register:latest
     ports:
       - 8761:8761    
     depends_on:
       - config
+      - zipkin
   config:
-    image: zakariaelattar/config_microservice:latest
+    image: config:latest
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://discovery:8761/eureka
- 
-
     ports:
       - 8888:8888
-  database:
-    image: zakariaelattar/db_microservice:latest
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://discovery:8761/eureka
-    depends_on:
-      - discovery
-      - config
   proxy:
-    image: zakariaelattar/proxy_microservice:latest
+    image: proxy:latest
     environment:
       - JAVA_OPTS=
-      - DEUREKA_SERVER=http://discovery:8761/eureka
+        - DEUREKA_SERVER=http://discovery:8761/eureka
 
     restart: on-failure
     depends_on:
-      - discovery
+      - register
       - config
+      - zipkin
+      - mysql_db
     ports:
       - 8088:8088
+    command: sh -c './wait-for mysql_db:3306 -- npm start'
 
-  Product:
-    image: zakariaelattar/db_microservice:latest
+#  Hr:
+#    image: hr:latest
+#    environment:
+#        - JAVA_OPTS=
+#         - DEUREKA_SERVER=http://discovery:8761/eureka
+#    depends_on:
+#      - register
+#      - config
+#      - zipkin
+#    ports:
+#      - 7070:7070
+  zipkin:
+    image: zipkin:latest
+    depends_on:
+      - config
+    ports:
+      - 9411:9411
+
+  mysql_db:
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - 3307:3306
     environment:
-        - JAVA_OPTS=
-        - DEUREKA_SERVER=http://discovery:8761/eureka
-        depends_on:
-          - discovery
-          - config      
+      MYSQL_DATABASE: proxy
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root

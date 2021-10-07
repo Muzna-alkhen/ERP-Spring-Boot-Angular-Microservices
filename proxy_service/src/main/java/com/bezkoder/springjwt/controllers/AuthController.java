@@ -217,7 +217,6 @@ public class AuthController {
      return dto;
 	}
 	@GetMapping("/roles")
-
 	public List<RoleResponseDto> getRoles()
 
 	{
@@ -239,7 +238,6 @@ public class AuthController {
 
 
 	@GetMapping("/users")
-
 	public List<UserResponseDto> getUsers()
 
 	{

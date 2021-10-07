@@ -3,6 +3,7 @@ package com.programming.techie.service;
 
 import com.programming.techie.dto.Job_offerResponseDto;
 import com.programming.techie.dto.LeaveRequestDto;
+import com.programming.techie.dto.LeavesFullDto;
 import com.programming.techie.dto.LeavesResponseDto;
 import com.programming.techie.model.*;
 import com.programming.techie.repository.EmployeeRepository;
@@ -151,7 +152,7 @@ public class LeaveService {
         for (Leaves leaves :
                 leavesList) {
             LeavesResponseDto dto = new LeavesResponseDto();
-            dto.setEmployee_name(leaves.getApproval());
+            dto.setEmployee_name(leaves.getEmployee().getFirstName());
             dto.setEnd_date(leaves.getEnd_date());
             dto.setId(leaves.getId());
             dto.setStart_date(leaves.getStart_date());
@@ -161,5 +162,23 @@ public class LeaveService {
             list.add(dto);
         }
         return list;
+    }
+
+    public LeavesFullDto get(Long id) {
+
+        Optional<Leaves> leaves = leavesRepository.findById(id);
+        LeavesFullDto dto = new LeavesFullDto();
+
+        dto.setApproval(leaves.get().getApproval());
+        dto.setApproval_date(leaves.get().getApproval_date());
+        dto.setEmployee(leaves.get().getEmployee().getId());
+        dto.setEnd_date(leaves.get().getEnd_date());
+        dto.setStart_date(leaves.get().getStart_date());
+        dto.setStatus(leaves.get().getStatus().getName());
+        dto.setId(leaves.get().getId());
+        dto.setType(leaves.get().getType().getName());
+        return dto;
+
+
     }
 }

@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/job-applicant-status")
 public class Job_applicant_statusController {
 
 

@@ -1,9 +1,7 @@
 package com.programming.techie.service;
 
 
-import com.programming.techie.dto.EmployeeFullResponseDto;
-import com.programming.techie.dto.EmployeeRequestDto;
-import com.programming.techie.dto.EmployeeResponseDto;
+import com.programming.techie.dto.*;
 import com.programming.techie.model.*;
 import com.programming.techie.repository.DepartmentRepository;
 import com.programming.techie.repository.DesignationRepository;
@@ -124,7 +122,7 @@ public class EmployeeService {
 
     public EmployeeFullResponseDto get(String username) {
 
-        Employee employee = employeeRepository.findByUser_name(username);
+        Employee employee = employeeRepository.findByUserName(username);
         EmployeeFullResponseDto dto = new EmployeeFullResponseDto();
         dto.setUser_name(employee.getUser_name());
         dto.setLastName(employee.getLastName());
@@ -149,8 +147,36 @@ public class EmployeeService {
         dto.setGrade(grade.getName());
 
         List<Leaves> leavesList = employee.getLeavesList();
+        List<LeavesResponseDto> list = new ArrayList();
+        for (Leaves leaves :
+                leavesList) {
+            LeavesResponseDto _dto = new LeavesResponseDto();
+            _dto.setEmployee_name(leaves.getApproval());
+            _dto.setEnd_date(leaves.getEnd_date());
+            _dto.setId(leaves.getId());
+            _dto.setStart_date(leaves.getStart_date());
+            _dto.setSubmit_date(leaves.getSubmit_date());
+            _dto.setType(leaves.getType().getName());
 
+            list.add(_dto);
+        }
 
+        dto.setLeavesList(list);
+
+        List<Month_salary> month_salaryList = employee.getMonth_salaryList();
+        List<Month_salaryDto> llist = new ArrayList();
+        for (Month_salary month_salary :
+                month_salaryList) {
+            Month_salaryDto _dto = new Month_salaryDto();
+            _dto.setAmount(month_salary.getAmount());
+            _dto.setEmployee_name(month_salary.getEmployee().getFirstName());
+            _dto.setId(month_salary.getId());
+            _dto.setMonth(month_salary.getMonth());
+            _dto.setYear(month_salary.getYear());
+
+            llist.add(_dto);
+        }
+     dto.setMonth_salaryList(llist);
 
         return dto;
     }
