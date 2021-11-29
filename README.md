@@ -4,10 +4,12 @@ The project generally aims to achieve an effective distributed ERP system struct
 
 # System Architecture  : 
 To achieve the main goal of the intended design, which is to separate the components of the system and achieve the principle of (Loose - Coupling) to increase the availability,scalability and fault-isolation. The presented structure raises several points:
+
 •	Separating the different system components according to the functional or non-functional services they provide, each component is an isolated microserivce .
 •	Each microserivce has its own database.
 •	Defining REST APIs for different services, called from anywhere in the system, and configured appropriately.
 •	Achieving an asynchronous communication structure between microservices through a message queue using the Event-driven Design Pattern. 
+
 
 # Implementation: 
 •	Back-end : spring boot 2.2.6 
@@ -19,3 +21,4 @@ To achieve the main goal of the intended design, which is to separate the compon
 # Deployment: 
 Docker (containerization)  : each microservice has its own docker image and all images are defined in a docker compose file to run it entairly.
 
+![i](https://user-images.githubusercontent.com/55164578/143878119-51ae5556-12ba-4b25-b05f-e64f590c1351.png)
